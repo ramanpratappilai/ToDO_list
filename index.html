@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>TO-DO List</h1>
+        <input type="text" id="taskInput" placeholder="Add new task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList">
+            <!-- Tasks will be added here dynamically -->
+        </ul>
+    </div>
+
+    <script>
+        function addTask() {
+            var taskInput = document.getElementById("taskInput");
+            var taskList = document.getElementById("taskList");
+            var task = taskInput.value;
+            if (task.trim() !== "") {
+                var li = document.createElement("li");
+                li.textContent = task;
+                taskList.appendChild(li);
+                taskInput.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
